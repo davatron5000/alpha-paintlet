@@ -11,8 +11,9 @@
 
   <section>
     <h2>RGB</h2>
+    <div class="demo">
     <div id="bg" style="--bg-alpha: 0.4; --bg-color: #FF0000; background: paint(alpha); height: 5rem;">Testing</div>
-
+</div>
     <fieldset>
     <legend>Adjust background</legend>
       <div>
@@ -26,11 +27,11 @@
     </fieldset>
   </section>
 
-    <section>
+  <section>
     <h2>HSL</h2>
-
+    <div class="demo">
     <div id="hsl" style="--h: 255; --bg-alpha: 0.4; --bg-color: hsl(var(--h) 94% 43%); background: paint(alpha); height: 5rem;">Testing HSL</div>
-
+</div>
     <fieldset>
     <legend>Adjust background</legend>
       <div>
@@ -44,6 +45,31 @@
     </fieldset>
   </section>
 
+  <section>
+    <h2>Named colors</h2>
+
+    <div class="demo">
+    <div id="named" style="--h: 255; --bg-alpha: 0.4; --bg-color: red; background: paint(alpha); height: 5rem;">Testing HSL</div>
+</div>
+    <fieldset>
+    <legend>Named color</legend>
+      <div>
+        <label for="color-select">Color</label>
+        <select id="color-select" oninput="named.style.setProperty('--bg-color', this.value)">
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="goldenrod">goldenrod</option>
+          <option value="tomato">tomato</option>
+          <option value="yellow">yellow</option>
+          <option value="rebeccapurple">rebeccapurple</option>
+        </select>
+      </div>
+      <div>
+        <label for="alpha3">Alpha</label>
+        <input id="alpha3" type="range" value="0.4" min="0" max="1" step="0.1" oninput="named.style.setProperty('--bg-alpha', this.value)">
+      </div>
+    </fieldset>
+  </section>
     <script type="module">
       CSS.paintWorklet.addModule('alpha.js')
     </script>

@@ -5,3 +5,8 @@ html {
   color: #2c3e50;
   margin: 2rem;
 }
+
+.demo {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IArs4c6QAAABZJREFUCB1jYMACpk+f/h9DmG6CQJsB2bIQmai3jpsAAAAASUVORK5CYII=);
+  background-repeat: repeat;
+}
