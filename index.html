@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body >
+
+  <section>
+    <h2>RGB</h2>
+    <div id="bg" style="--bg-alpha: 0.4; --bg-color: #FF0000; background: paint(alpha); height: 5rem;">Testing</div>
+
+    <fieldset>
+    <legend>Adjust background</legend>
+      <div>
+        <label for="color1">Color</label>
+        <input id="color1" type="color" value="#FF0000" oninput="bg.style.setProperty('--bg-color', this.value)">
+      </div>
+      <div>
+        <label for="alpha1">Alpha</label>
+        <input id="alpha1" type="range" value="0.4" min="0" max="1" step="0.1" oninput="bg.style.setProperty('--bg-alpha', this.value)">
+      </div>
+    </fieldset>
+  </section>
+
+    <section>
+    <h2>HSL</h2>
+
+    <div id="hsl" style="--h: 255; --bg-alpha: 0.4; --bg-color: hsl(var(--h) 94% 43%); background: paint(alpha); height: 5rem;">Testing HSL</div>
+
+    <fieldset>
+    <legend>Adjust background</legend>
+      <div>
+        <label for="h">Hue</label>
+        <input id="h" type="range" value="255" min="0" max="360" oninput="hsl.style.setProperty('--h', this.value)">
+      </div>
+      <div>
+        <label for="alpha2">Alpha</label>
+        <input id="alpha2" type="range" value="0.4" min="0" max="1" step="0.1" oninput="hsl.style.setProperty('--bg-alpha', this.value)">
+      </div>
+    </fieldset>
+  </section>
+
+    <script type="module">
+      CSS.paintWorklet.addModule('alpha.js')
+    </script>
+  </body>
+</html>
